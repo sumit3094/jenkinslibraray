@@ -1,3 +1,3 @@
-def f1(name){
+def call(name){
   echo "Hey ${name}, Testing Demo"
 }
