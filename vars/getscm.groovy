@@ -1,4 +1,8 @@
-//def repoUrl = checkout(scm).GIT_URL
-String determineRepoName() {
-    return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/')[3].split("\\.")[0]
-}
+def call(Map stageParams) {
+
+    checkout([
+        $class: 'GitSCM',
+        branches: [[name:  stageParams.branch ]],
+        userRemoteConfigs: [[ url: stageParams.url ]]
+    ])
+  }
