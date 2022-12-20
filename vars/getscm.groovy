@@ -1,0 +1,1 @@
+def repoUrl = checkout(scm).GIT_URL
